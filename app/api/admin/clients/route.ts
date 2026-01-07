@@ -48,7 +48,7 @@ export async function GET(request: NextRequest) {
     });
 
     // Format the response
-    const formattedClients = clients.map((client) => ({
+    const formattedClients = clients.map((client: any) => ({
       id: client.id,
       uniqueClientId: client.uniqueClientId,
       companyName: client.companyName,

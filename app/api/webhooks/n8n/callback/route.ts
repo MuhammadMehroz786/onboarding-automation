@@ -124,7 +124,7 @@ export async function POST(request: NextRequest) {
         activityDescription: `Generated ${createdLinks.length} resource links via N8N`,
         metadata: {
           linkCount: createdLinks.length,
-          linkTypes: createdLinks.map((l) => l.linkType),
+          linkTypes: createdLinks.map((l: any) => l.linkType),
         },
       },
     });

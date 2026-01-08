@@ -50,11 +50,11 @@ export async function GET(request: NextRequest) {
 
     // Group links by type
     const linksByType = {
-      documents: client.links.filter((l) => l.linkType === "google_doc"),
-      projects: client.links.filter((l) => l.linkType === "clickup"),
-      data: client.links.filter((l) => l.linkType === "airtable"),
+      documents: client.links.filter((l: any) => l.linkType === "google_doc"),
+      projects: client.links.filter((l: any) => l.linkType === "clickup"),
+      data: client.links.filter((l: any) => l.linkType === "airtable"),
       other: client.links.filter(
-        (l) => !["google_doc", "clickup", "airtable"].includes(l.linkType)
+        (l: any) => !["google_doc", "clickup", "airtable"].includes(l.linkType)
       ),
     };
 

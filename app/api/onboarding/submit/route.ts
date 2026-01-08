@@ -34,7 +34,7 @@ export async function POST(request: NextRequest) {
     const uniqueClientId = generateUniqueClientId();
 
     // Create user and client in a transaction
-    const result = await prisma.$transaction(async (tx) => {
+    const result = await prisma.$transaction(async (tx: any) => {
       // Create user
       const user = await tx.user.create({
         data: {
